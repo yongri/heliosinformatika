@@ -1,0 +1,28 @@
+RewriteEngine on
+
+RewriteRule ^company-background$ overview.php [L]
+RewriteRule ^certifications$ certifications.php [L]
+RewriteRule ^awards$ awards.php [L]
+RewriteRule ^hp-server$ product_server.php [L]
+RewriteRule ^hp-storage$ product_storage.php [L]
+RewriteRule ^helios-service$ product_service.php [L]
+RewriteRule ^hp-server/(.*)/(.*)$ product_server_detail.php?product=$1&id=$2 [L]
+RewriteRule ^hp-storage/(.*)/(.*)$ product_storage_detail.php?product=$1&id=$2 [L]
+RewriteRule ^event$ event_eu.php [L]
+RewriteRule ^event-archieve$ event_archieve.php [L]
+RewriteRule ^promo-end-user$ promo_eu.php [L]
+RewriteRule ^promo-business-partner$ promo_bp.php [L]
+RewriteRule ^promo-end-user/(.*)/(.*)$ promo_eu_detail.php?promo=$1&id=$2 [L]
+RewriteRule ^promo-business-partner/(.*)/(.*)$ promo_bp_detail.php?promo=$1&id=$2 [L]
+RewriteRule ^press-release$ press_release.php [L]
+RewriteRule ^media-coverage$ media_coverage.php [L]
+RewriteRule ^press-release/(.*)/(.*)$ press_detail.php?news=$1&id=$2 [L]
+RewriteRule ^media-coverage/(.*)/(.*)$ coverage_detail.php?news=$1&id=$2 [L]
+RewriteRule ^career$ career.php [L]
+RewriteRule ^contact-us$ contact.php [L]
+RewriteRule ^business-partner-login$ bp_login.php [L]
+RewriteRule ^sign-out$ logout.php [L]
+RewriteRule ^search$ search.php [L]
+RewriteRule ^admin$ ../login.php [L]
+
+Options All -Indexes

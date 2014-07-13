@@ -1,0 +1,29 @@
+user credential backend helios
+
+Admin Utama :
+user : heliosadmin
+
+ password : helios%admin%2014%cti
+
+user : media
+password : media%helios%2014%adm
+
+'edit-coverages' => 'media-coverages',
+	'edit-jobs' => 'job-listings',
+	'edit-contact' => 'contact',
+	'edit-events' => 'events',
+	'edit-promotions' => 'promotions',
+
+$menu[6] = array( __('job-listing'), 'edit_jobs', 'edit-jobs.php', '', 'open-if-no-js menu-top menu-icon-post', 'menu-posts', 'dashicons-admin-post' );
+	$submenu['edit-jobs.php'][6]  = array( __('All Jobs'), 'edit_jobs', 'edit-jobs.php' );
+	/* translators: add new post */
+	$submenu['edit-jobs.php'][11]  = array( _x('Add New', 'jobs'), get_post_type_object( 'jobs' )->cap->create_posts, 'jobs-new.php' );
+
+	$i = 17;
+	foreach ( get_taxonomies( array(), 'objects' ) as $tax ) {
+		if ( ! $tax->show_ui || ! $tax->show_in_menu || ! in_array('jobs', (array) $tax->object_type, true) )
+			continue;
+
+		$submenu['edit-jobs.php'][$i++] = array( esc_attr( $tax->labels->menu_name ), $tax->cap->manage_terms, 'edit-tags.php?taxonomy=' . $tax->name );
+	}
+	unset($tax);
