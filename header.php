@@ -60,7 +60,7 @@
 					</ul>
 				</div>
 				<?php 
-				$sql="SELECT * FROM business_partner WHERE Bp_id='{$_SESSION['Bp_id']}'";
+				@$sql="SELECT * FROM business_partner WHERE Bp_id='{$_SESSION['Bp_id']}'";
 				$query=mysql_query($sql); //echo $sql;
 				$data=mysql_fetch_array($query);
 				$status=$data['Status'];

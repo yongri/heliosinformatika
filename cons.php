@@ -1,2 +1,2 @@
 <?php
-define('BASE_URL', '10.8.102.19/heliosinformatika');
+define('BASE_URL', 'localhost/project/dini/heliosinformatika');
